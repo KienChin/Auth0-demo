@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Auth0ServiceService } from './auth0-service.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'auth0';
+
+  constructor(private loginService: Auth0ServiceService){
+
+  }
+  
+  logMeIn(){
+    this.loginService.login();
+  }
 }
